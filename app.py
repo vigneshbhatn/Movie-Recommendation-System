@@ -4,7 +4,7 @@ from recommender import recommend
 
 # Load movie titles
 movies_df = pd.read_csv("dataset/cleaned_movies.csv")  # Update with actual path
-movie_list = movies_df['title'].tolist()
+movie_list = sorted(movies_df['title'].tolist())
 
 st.set_page_config(page_title="Movie Recommendation System", layout="wide")
 st.title("🎬 Movie Recommendation System")
