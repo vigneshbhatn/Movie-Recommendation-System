@@ -56,7 +56,7 @@ def recommend(movie_title):
 
 # print("Enter the movie you want to get recommendations for:")
 # movie = input()
-# titles, posters = recommend(movie)
+# titles = recommend(movie)
 #
 # print("\nTop 5 Recommended Movies:")
 # for t in titles:

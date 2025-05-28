@@ -1,16 +1,19 @@
 import streamlit as st
-from recommender import recommend
 import pandas as pd
+from recommender import recommend
+
+# Load movie titles
+movies_df = pd.read_csv("dataset/cleaned_movies.csv")  # Update with actual path
+movie_list = movies_df['title'].tolist()
 
 st.set_page_config(page_title="Movie Recommendation System", layout="wide")
 st.title("🎬 Movie Recommendation System")
 
-movies_df = pd.read_csv("dataset/cleaned_movies.csv")
-movie_list = movies_df['title'].tolist()
-movie_input = st.selectbox("Enter a movie you like:",movie_list)
+# Autocomplete dropdown
+selected_movie = st.selectbox("Choose a movie you like:", movie_list)
 
-if movie_input:
-    titles, posters = recommend(movie_input)
+if selected_movie:
+    titles, posters = recommend(selected_movie)
 
     if titles:
         st.markdown("### ⭐ Top 5 Recommendations:")
