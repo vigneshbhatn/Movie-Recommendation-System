@@ -47,17 +47,11 @@ def recommend(movie_title):
     recommended_titles = []
     recommended_posters = []
 
+    input_movie_poster = fetch_poster(movie_title)
+
     for i in movie_list:
         movie_title = df.iloc[i[0]].title
         recommended_titles.append(movie_title)
         recommended_posters.append(fetch_poster(movie_title))
 
-    return recommended_titles, recommended_posters
-
-# print("Enter the movie you want to get recommendations for:")
-# movie = input()
-# titles = recommend(movie)
-#
-# print("\nTop 5 Recommended Movies:")
-# for t in titles:
-#     print(t)
+    return input_movie_poster,recommended_titles, recommended_posters
