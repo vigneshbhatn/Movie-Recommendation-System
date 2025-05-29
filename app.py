@@ -15,7 +15,7 @@ selected_movie = st.selectbox("Choose a movie you like:", movie_list)
 if selected_movie:
     input_poster,titles, posters = recommend(selected_movie)
     st.markdown("### 🔍 Selected Movie")
-    st.image(input_poster, width=200, caption=selected_movie)
+    st.image(input_poster, width=100, caption=selected_movie)
     if titles:
         st.markdown("### ⭐ Top 5 Recommendations:")
         cols = st.columns(5)
